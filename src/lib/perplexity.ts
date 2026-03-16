@@ -136,6 +136,6 @@ export async function webSearch(
     throw new Error(`Perplexity Search API error ${response.status}: ${err}`);
   }
 
-  const data = await response.json();
-  return (data.results ?? []) as SearchResult[];
+  const data = (await response.json()) as { results?: SearchResult[] };
+  return data.results ?? [];
 }

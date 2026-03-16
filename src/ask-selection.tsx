@@ -1,4 +1,4 @@
-import { Clipboard, HUD, Toast, getSelectedText, showHUD, showToast } from "@raycast/api";
+import { Clipboard, Toast, getSelectedText, showHUD, showToast } from "@raycast/api";
 import { getPrefs, streamChat } from "./lib/perplexity";
 import { saveHistoryEntry } from "./lib/history";
 
