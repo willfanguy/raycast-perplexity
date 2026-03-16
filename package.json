@@ -1,0 +1,98 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "raycast-perplexity",
+  "title": "Perplexity AI",
+  "description": "Search and research with Perplexity AI — streaming answers, citations, domain filters, and Deep Research",
+  "icon": "perplexity-logo.png",
+  "author": "will",
+  "categories": ["Productivity", "Web", "Developer Tools"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "quick-ask",
+      "title": "Ask Perplexity",
+      "subtitle": "Sonar Pro",
+      "description": "Ask anything — get a streamed answer with citations",
+      "mode": "view"
+    },
+    {
+      "name": "deep-research",
+      "title": "Deep Research",
+      "subtitle": "Sonar Deep Research",
+      "description": "Exhaustive multi-source research report",
+      "mode": "view"
+    },
+    {
+      "name": "web-search",
+      "title": "Web Search",
+      "subtitle": "Search API",
+      "description": "Raw ranked web search results with filtering",
+      "mode": "view"
+    },
+    {
+      "name": "ask-selection",
+      "title": "Ask About Selection",
+      "subtitle": "Sonar Pro",
+      "description": "Send selected text to Perplexity and copy the answer",
+      "mode": "no-view"
+    },
+    {
+      "name": "history",
+      "title": "Search History",
+      "subtitle": "Perplexity AI",
+      "description": "Browse past searches and answers",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "Perplexity API Key",
+      "description": "Your Perplexity API key from perplexity.ai/settings/api",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "defaultModel",
+      "title": "Default Model",
+      "description": "Model used for Quick Ask",
+      "type": "dropdown",
+      "required": false,
+      "default": "sonar-pro",
+      "data": [
+        { "title": "Sonar (Fast)", "value": "sonar" },
+        { "title": "Sonar Pro (Best)", "value": "sonar-pro" },
+        { "title": "Sonar Reasoning Pro (CoT)", "value": "sonar-reasoning-pro" }
+      ]
+    },
+    {
+      "name": "saveHistory",
+      "title": "Save History",
+      "description": "Save queries and answers to local history",
+      "type": "checkbox",
+      "required": false,
+      "default": true,
+      "label": "Save search history locally"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.10",
+    "@raycast/utils": "^1.20.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.14.0",
+    "@types/react": "18.3.18",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
